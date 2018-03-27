@@ -1,33 +1,18 @@
 # doors-monitor
 Monitor open/close doors with an raspberry p3 with magnetic contact and/or relays
 
-# Install Raspbian
-Download and install raspbian on SD Card
+* Download and install raspbian on SD Card
+* Configure wifi o network
+* Update / dist-upgrade
+* sudo apt-get install python-gpiozero python-pkg-resources python-mysqldb
+* git clone git://git.drogon.net/wiringPi // cd wiringPi/ // ./build
+* sudo crontab -e -> insert */1 * * * * sudo /home/pi/tex_check.sh
+* In raspi-config Enable autologin console
 
-# Configure wifi o network
-sudo iwlist wlan0 scan
-nano /etc/wpa_supplicant/wpa_supplicant.conf
+# fix indent error
+expand -t 4 script.py > fixed_script.py
 
-``country=IT
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-network={
-    ssid="YOURSSID"  
-    psk="yourpassword"  
-}``
+# mail alert when open doors
 
-# Update
-
-sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoremove && sudo apt-get clean
-
-# In raspi-config
-
-Enable autologin console
-
-nano .bashrc
-
-if [ $(tty) == /dev/tty1 ]; then
-/home/pi/autostart.sh
-fi
-
-
+* sudo apt-get install ssmtp mailutils
+* edit /etc/ssmtp/ssmtp.conf and /etc/ssmtp/revaliases
