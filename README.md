@@ -16,3 +16,7 @@ expand -t 4 script.py > fixed_script.py
 
 * sudo apt-get install ssmtp mailutils
 * edit /etc/ssmtp/ssmtp.conf and /etc/ssmtp/revaliases
+
+# GPIO pin out raspberry 3
+
+![Raspberry GPIO PIN](https://raw.githubusercontent.com/sharpec/doors-monitor/blob/master/Raspberry-Pi-GPIO-Layout-Model-B-Plus.png)
